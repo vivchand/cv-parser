@@ -8,3 +8,9 @@ app_license = "mit"
 doctype_js = {
     "Job Applicant": "public/js/job_applicant.js"
 }
+
+doc_events = {
+    "Job Applicant": {
+        "validate": "cv_parser.overrides.job_applicant.validate"
+    }
+}

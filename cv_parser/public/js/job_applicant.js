@@ -1,6 +1,6 @@
 frappe.ui.form.on("Job Applicant", {
     refresh(frm) {
-        frm.add_custom_button("Parse Resume", function () {
+        frm.add_custom_button("Parse Resume", async function () {
             if (!frm.doc.resume_attachment) {
                 frappe.msgprint({
                     title: "No Resume",
@@ -9,6 +9,16 @@ frappe.ui.form.on("Job Applicant", {
                 });
                 return;
             }
+
+            // Auto-fill mandatory fields so form can save before parsing
+            if (!frm.doc.applicant_name) {
+                frm.set_value("applicant_name", "Parsing...");
+            }
+            if (!frm.doc.email_id) {
+                frm.set_value("email_id", "parsing@placeholder.com");
+            }
+            await frm.save();
+
             frm.page.set_indicator("Parsing...", "orange");
             frm.set_intro("⏳ Reading resume, please wait...", "blue");
             let slowWarning = setTimeout(() => {

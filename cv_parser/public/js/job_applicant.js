@@ -1,5 +1,9 @@
 frappe.ui.form.on("Job Applicant", {
     refresh(frm) {
+        // Temporarily remove mandatory from these fields
+        frm.toggle_reqd("applicant_name", false);
+        frm.toggle_reqd("email_id", false);
+
         frm.add_custom_button("Parse Resume", async function () {
             if (!frm.doc.resume_attachment) {
                 frappe.msgprint({
@@ -10,7 +14,7 @@ frappe.ui.form.on("Job Applicant", {
                 return;
             }
 
-            // Auto-fill mandatory fields so form can save before parsing
+            // Set placeholder values
             if (!frm.doc.applicant_name) {
                 frm.set_value("applicant_name", "Parsing...");
             }

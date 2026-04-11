@@ -25,7 +25,7 @@ frappe.ui.form.on("User", {
                             return;
                         }
                         frappe.call({
-                            method: "sarva_customizations.api.user_utils.set_user_password",
+                            method: "cv_parser.api.user_utils.set_user_password",
                             args: {
                                 user: frm.doc.name,
                                 password: values.new_password

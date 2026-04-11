@@ -12,6 +12,7 @@ doctype_js = {
 
 doc_events = {
     "Job Applicant": {
-        "validate": "cv_parser.overrides.job_applicant.validate"
+        "validate": "cv_parser.overrides.job_applicant.validate",
+        "before_save": "cv_parser.overrides.job_applicant.before_save"
     }
 }

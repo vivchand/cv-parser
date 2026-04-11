@@ -6,7 +6,8 @@ app_email = "vivyn.crs@gmail.com"
 app_license = "mit"
 
 doctype_js = {
-    "Job Applicant": "public/js/job_applicant.js"
+    "Job Applicant": "public/js/job_applicant.js",
+    "User": "public/js/user_form.js"
 }
 
 doc_events = {

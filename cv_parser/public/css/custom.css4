@@ -1,0 +1,15 @@
+/* Login page logo */
+.login-content .app-logo,
+.login-page .app-logo,
+img.app-logo {
+    width: 500px !important;
+    height: 500px !important;
+    object-fit: contain !important;
+}
+
+/* Navbar logo */
+.navbar .app-logo {
+    width: 160px !important;
+    height: 60px !important;
+    object-fit: contain !important;
+}
